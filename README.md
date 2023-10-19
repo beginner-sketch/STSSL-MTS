@@ -8,5 +8,7 @@ For both datasets, please run python generate_training_data.py --dataset=DATA to
 # Running
 ``` python
 cd model
+```
+``` python
 python traintest_GCRN.py --dataset=DATA GPU_DEVICE_ID
 ```
