@@ -20,8 +20,8 @@ class STSSL(nn.Module):
         self.encoder = STEncoder(Kt=3, Ks=3, blocks=[[d_in, int(d_model//2), d_model], [d_model, int(d_model//2), d_model]], 
                         input_length=input_length, num_nodes=num_nodes, droprate=dropout)
         
-        # traffic flow prediction branch
-        self.mlp = MLP(d_model, d_output*horizon)
+        # traffic flow prediction branch (one-step prediction)
+        self.mlp = MLP(d_model, d_output)
         # temporal heterogenrity modeling branch
         self.thm = TemporalHeteroModel(d_model, batch_size, num_nodes, device)
         # spatial heterogenrity modeling branch
