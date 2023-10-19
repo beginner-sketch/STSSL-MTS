@@ -46,7 +46,7 @@ def prepare_x_y(x, y):
               y: shape (horizon, batch_size, num_sensor * output_dim)
     """
     x0 = x[..., :args.input_dim]
-    y0 = x[..., :args.output_dim]
+    y0 = y[..., :args.output_dim]
     y1 = y[..., args.output_dim:]
     x0 = torch.from_numpy(x0).float()
     y0 = torch.from_numpy(y0).float()
