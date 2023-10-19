@@ -13,7 +13,7 @@ from STSSL_layers import (
 )
 
 class STSSL(nn.Module):
-    def __init__(self, d_model, input_length, horizon, num_nodes, nmb_prototype, dropout, d_in, d_output, shm_temp, percent, batch_size, device):
+    def __init__(self, d_model, input_length, num_nodes, nmb_prototype, dropout, d_in, d_output, shm_temp, percent, batch_size, device):
         super(STSSL, self).__init__()
         self.percent = percent
         # spatial temporal encoder
@@ -83,7 +83,6 @@ def main():
     parser.add_argument("--batch_size", type=int, default=64, help="which GPU to use")
     parser.add_argument('--num_nodes', type=int, default=207, help='number of variables (e.g., 207 in METR-LA, 325 in PEMS-BAY)')
     parser.add_argument('--input_length', type=int, default=12, help='sequence length of historical observation')
-    parser.add_argument('--horizon', type=int, default=12, help='sequence length of prediction')
     parser.add_argument('--input_dim', type=int, default=1, help='number of input channel')
     parser.add_argument('--output_dim', type=int, default=1, help='number of output channel')
     parser.add_argument('--d_model', type=int, default=64, help='number of hidden channel')
@@ -94,7 +93,7 @@ def main():
     parser.add_argument("gpu", type=int, default=3, help="which GPU to use")
     args = parser.parse_args()
     device = torch.device("cuda:{}".format(args.gpu)) if torch.cuda.is_available() else torch.device("cpu")
-    model = STSSL(args.d_model, args.input_length, args.horizon, args.num_nodes, args.nmb_prototype, args.dropout, args.input_dim, args.output_dim, args.shm_temp, args.percent, 
+    model = STSSL(args.d_model, args.input_length, args.num_nodes, args.nmb_prototype, args.dropout, args.input_dim, args.output_dim, args.shm_temp, args.percent, 
                   args.batch_size, device).to(device)
     
     data = torch.rand(args.batch_size, args.input_length, args.num_nodes, args.input_dim).to(device)    # [b,t,n,c] 
