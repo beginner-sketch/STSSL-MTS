@@ -155,7 +155,7 @@ parser.add_argument('--trainval_ratio', type=float, default=0.8, help='the ratio
 parser.add_argument('--val_ratio', type=float, default=0.125, help='the ratio of validation data among the trainval ratio')
 parser.add_argument('--num_nodes', type=int, default=207, help='num_nodes')
 parser.add_argument('--input_length', type=int, default=12, help='input sequence length')
-parser.add_argument('--horizon', type=int, default=12, help='output sequence length')
+parser.add_argument('--horizon', type=int, default=1, help='one step prediction')
 parser.add_argument('--input_dim', type=int, default=1, help='number of input channel')
 parser.add_argument('--output_dim', type=int, default=1, help='number of output channel')
 parser.add_argument('--d_model', type=int, default=64, help='number of hidden channel')
