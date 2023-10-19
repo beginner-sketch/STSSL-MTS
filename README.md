@@ -3,7 +3,7 @@ An implementation of STSSL backbone on METRLA and PEMSBAY datasets.
 DATA = {METRLA, PEMSBAY}
 
 # Preparation
-For both datasets, please run following code to get train/val/test data.
+For both datasets, please run the following code to get train/val/test data.
 ``` python
 python generate_training_data.py --dataset=DATA
 ```
