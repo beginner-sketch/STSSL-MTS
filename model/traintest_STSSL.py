@@ -26,7 +26,7 @@ def print_model(model):
     return
 
 def get_model():  
-    model = STSSL(args.d_model, args.input_length, args.horizon, args.num_nodes, args.nmb_prototype, args.dropout, args.input_dim, args.output_dim, args.shm_temp, args.percent, 
+    model = STSSL(args.d_model, args.input_length, args.num_nodes, args.nmb_prototype, args.dropout, args.input_dim, args.output_dim, args.shm_temp, args.percent, 
                   args.batch_size, device).to(device)
     return model
 
