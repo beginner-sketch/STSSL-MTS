@@ -19,7 +19,7 @@ python traintest_STSSL.py --dataset=DATA -horizon HORIZON GPU_DEVICE_ID
 ```
 or
 ``` python
-python traintest_STSSL_multi.py --dataset=DATA GPU_DEVICE_ID
+python traintestmulti_STSSL.py.py --dataset=DATA GPU_DEVICE_ID
 # HORIZON = 12
 # GPU_DEVICE_ID: which gup to use
 ```
