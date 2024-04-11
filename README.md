@@ -20,7 +20,7 @@ python traintest_STSSL.py --dataset=DATA -horizon HORIZON GPU_DEVICE_ID
 ```
 or
 ``` python
-python traintestmulti_STSSL.py.py --dataset=DATA GPU_DEVICE_ID
+python traintestmulti_STSSL.py --dataset=DATA GPU_DEVICE_ID
 # DATA = {METRLA, PEMSBAY}
 # HORIZON = 12
 # GPU_DEVICE_ID: which gup to use
